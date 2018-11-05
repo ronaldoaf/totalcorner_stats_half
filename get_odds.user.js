@@ -43,7 +43,7 @@ function getOdds(jogo_id){
         
         $.ajax({
             type: 'POST',
-            url: 'https://aposte.me/totalcorner_stats_half/insert_odds.php',
+            url: 'https://bot-ao.com/half/insert_odds.php',
             data: JSON.stringify (obj),
             success: function(data) {  
                 console.log(data)
@@ -56,7 +56,7 @@ function getOdds(jogo_id){
 
 
 setInterval(function(){
-	$.get('https://aposte.me/totalcorner_stats_half/select_odds.php', function(jogo_id){
+	$.get('https://bot-ao.com/half/select_odds.php', function(jogo_id){
 		getOdds(jogo_id);	
 	});
 },5*1000);
