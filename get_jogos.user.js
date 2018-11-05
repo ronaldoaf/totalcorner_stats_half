@@ -49,7 +49,7 @@ function getJogos(data, page){
 			            
 		$.ajax({
 			type: 'POST',
-			url: 'https://aposte.me/totalcorner_stats_half/insert_jogos.php',
+			url: 'https://bot-ao.com/half/insert_jogos.php',
 			data: JSON.stringify (obj),
 			success: function(res_insert) {
 			    console.log(res_insert)
@@ -63,7 +63,7 @@ function getJogos(data, page){
 
 
 setInterval(function(){
-	$.get('https://aposte.me/totalcorner_stats_half/select_jogos.php', function(obj){
+	$.get('https://bot-ao.com/half//select_jogos.php', function(obj){
 		obj=JSON.parse(obj);
 		for(var i=1; i<=obj.n_pages; i++){
 			getJogos(obj.data, i);
