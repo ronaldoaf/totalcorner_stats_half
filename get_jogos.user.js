@@ -12,7 +12,8 @@
 
 function getJogos(data, page){
 	var obj=[];
-	$.get('/match/schedule/'+data+'/page:'+page, function(res){	
+	$.get('/match/schedule/'+data+'/page:'+page, function(res){
+		if($(this).find('td:eq(1)').text().includes('mins play')) return;
 		var data_inicio=$(res).find('h3 small').text();
 		$(res).find('tr[data-match_id]').each(function(){ 
 			var id=$(this).attr('data-match_id'); 
